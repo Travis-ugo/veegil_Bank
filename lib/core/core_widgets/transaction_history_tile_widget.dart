@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:veegil_bank_app/features/domain/data_from_database/transaction_models.dart';
-import 'package:veegil_bank_app/features/presentation/transaction_history/transaction_history_details_view.dart';
+import 'package:veegil_bank_app/presentation/features/domain/data_from_database/transaction_models.dart';
+import 'package:veegil_bank_app/presentation/features/presentation/transaction_history/transaction_history_details_view.dart';
 
 class TransactionHistoryTileWidget extends StatelessWidget {
   const TransactionHistoryTileWidget({
