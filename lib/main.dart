@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:veegil_bank_app/presentation/features/app.dart';
+import 'package:veegil_bank_app/core/app.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,5 +14,3 @@ class MyApp extends StatelessWidget {
     return const VeegilApp();
   }
 }
-
-// glpat-GyFK6sk5nPPzfC_S3xdX

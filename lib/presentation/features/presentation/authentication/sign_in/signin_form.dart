@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:veegil_bank_app/presentation/features/app.dart';
+import 'package:veegil_bank_app/core/app.dart';
 import 'package:veegil_bank_app/presentation/features/application/authentication_bloc/authentication_bloc.dart';
 import 'package:veegil_bank_app/presentation/features/presentation/authentication/sign_up/sign_up_page.dart';
 
