@@ -1,5 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:http/http.dart';
 import 'package:veegil_bank_app/presentation/features/domain/transaction_domain/transaction_repository.dart';
 import 'package:http/http.dart' as http;
 import 'package:veegil_bank_app/presentation/features/domain/transaction_domain/transaction_transfer_model.dart';
@@ -14,26 +12,26 @@ class TransactionRepositoryImp implements TransactionRepository {
       : _httpClient = httpClient ?? http.Client();
 
   final http.Client _httpClient;
-
   static const String baseVeegilUrl = "bankapi.veegil.com";
   static const String transactionBaseUrl = "/accounts";
+  static const String transferUrl = "/transfer";
+
+  static const String withDrawUrl = "/withdraw";
 
   @override
   Future<TransactionsTransferModel> transferMoneyFromAccount({
     required String phoneNumber,
-    required int amount,
+    required String amount,
   }) async {
-    const String transferUrl = "/transfer";
+    final body = {
+      "phoneNumber": phoneNumber,
+      "amount": amount,
+    };
 
     final transferMoneyFromAccountRequest = Uri.https(
       baseVeegilUrl,
       transactionBaseUrl + transferUrl,
     );
-
-    final body = {
-      "phoneNumber": phoneNumber,
-      "amount": "$amount",
-    };
 
     final transferMoneyFromAccountResponse =
         await _httpClient.post(transferMoneyFromAccountRequest, body: body);
@@ -49,26 +47,25 @@ class TransactionRepositoryImp implements TransactionRepository {
   @override
   Future<TransactionsWithDrawModel> withDrawMoneyFromAccount({
     required String phoneNumber,
-    required int amount,
+    required String amount,
   }) async {
-    const String withDrawUrl = "/withdraw";
-    
-    // final withDrawMoneyFromAccountRequest = Uri.https(
-    //   baseVeegilUrl,
-    //   transactionBaseUrl + withDrawUrl,
-    // );
-
-    // final body = {
-    //   "phoneNumber": phoneNumber,
-    //   "amount": "$amount",
-    // };
-
-    final withDrawMoneyFromAccounResponse = await helperFunction(
-      phoneNumber,
-      amount,
-      withDrawUrl,
+    final withDrawMoneyFromAccountRequest = Uri.https(
+      baseVeegilUrl,
+      transactionBaseUrl + withDrawUrl,
     );
-    // await _httpClient.post(withDrawMoneyFromAccountRequest, body: body);
+
+    final body = {
+      "phoneNumber": phoneNumber,
+      "amount": amount,
+    };
+
+    // final withDrawMoneyFromAccounResponse = await helperFunction(
+    //   phoneNumber,
+    //   amount,
+    //   withDrawUrl,
+    // );
+    final withDrawMoneyFromAccounResponse =
+        await _httpClient.post(withDrawMoneyFromAccountRequest, body: body);
 
     if (withDrawMoneyFromAccounResponse.statusCode != 200) {
       throw WithDrawMoneyFromAccountFailure();
@@ -78,21 +75,21 @@ class TransactionRepositoryImp implements TransactionRepository {
         withDrawMoneyFromAccounResponse.body);
   }
 
-  Future<Response> helperFunction(
-      String phoneNumber, int amount, String urlPrefix) async {
-    String newUrl = urlPrefix;
-    final helperRequest = Uri.https(
-      baseVeegilUrl,
-      transactionBaseUrl + newUrl,
-    );
+  // Future<Response> helperFunction(
+  //     String phoneNumber, String amount, String urlPrefix) async {
+  //   String newUrl = urlPrefix;
+  //   final helperRequest = Uri.https(
+  //     baseVeegilUrl,
+  //     transactionBaseUrl + newUrl,
+  //   );
 
-    final body = {
-      "phoneNumber": phoneNumber,
-      "amount": "$amount",
-    };
+  //   final body = {
+  //     "phoneNumber": phoneNumber,
+  //     "amount": amount,
+  //   };
 
-    final helperResponse = await _httpClient.post(helperRequest, body: body);
+  //   final helperResponse = await _httpClient.post(helperRequest, body: body);
 
-    return helperResponse;
-  }
+  //   return helperResponse;
+  // }
 }

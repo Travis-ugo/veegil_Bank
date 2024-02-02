@@ -1,4 +1,4 @@
-import 'package:veegil_bank_app/presentation/features/domain/authentication_repository/authenticatin_model.dart';
+import 'package:veegil_bank_app/presentation/features/domain/authentication_repository/authentication_model.dart';
 
 abstract class AuthenticationRepository {
   Future<AuthenticationSignUpModel> signUpWithPhoneNumAndPassord(

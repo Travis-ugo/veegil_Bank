@@ -67,7 +67,7 @@ class WithdrawFromAccountView extends StatelessWidget {
                       context.read<TransactionsBloc>().add(
                             WithdrawMoneyFromAccountEvent(
                               phoneNumber: accountNumberTextController.text,
-                              amount:  int.parse(amountTextController.text),
+                              amount: amountTextController.text,
                             ),
                           );
                     }

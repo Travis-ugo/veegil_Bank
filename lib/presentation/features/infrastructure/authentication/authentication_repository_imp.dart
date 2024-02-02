@@ -1,7 +1,5 @@
-// ignore: file_names
 import 'package:http/http.dart' as http;
-import 'package:http/http.dart';
-import 'package:veegil_bank_app/presentation/features/domain/authentication_repository/authenticatin_model.dart';
+import 'package:veegil_bank_app/presentation/features/domain/authentication_repository/authentication_model.dart';
 
 import 'package:veegil_bank_app/presentation/features/domain/authentication_repository/authentication_repository.dart';
 
@@ -12,9 +10,10 @@ class AuthenticationRepositoryImp implements AuthenticationRepository {
       : _httpClient = httpClient ?? http.Client();
 
   final http.Client _httpClient;
-
   static const String baseVeegilUrl = "bankapi.veegil.com";
   static const String authBaseUrl = "/auth";
+
+  static const String signUpUrl = "/signup";
 
   @override
   Future<AuthenticationSignUpModel> signUpWithPhoneNumAndPassord({
@@ -22,9 +21,6 @@ class AuthenticationRepositoryImp implements AuthenticationRepository {
     required String password,
     required String comfirmPassword,
   }) async {
-    const String signUpUrl = "/signup";
-    final Response authenticationResponse;
-
     final body = {
       "phoneNumber": phoneNumber,
       "password": password,
@@ -35,7 +31,7 @@ class AuthenticationRepositoryImp implements AuthenticationRepository {
       authBaseUrl + signUpUrl,
     );
 
-    authenticationResponse =
+    final authenticationResponse =
         await _httpClient.post(authenticationRequest, body: body);
 
     if (authenticationResponse.statusCode != 200) throw AuthenticationFailure();

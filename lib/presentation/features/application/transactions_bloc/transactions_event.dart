@@ -10,7 +10,7 @@ sealed class TransactionsEvent extends Equatable {
 
 class TransferMoneyToOtherAccountEvent extends TransactionsEvent {
   final String phoneNumber;
-  final int amount;
+  final String amount;
   const TransferMoneyToOtherAccountEvent({
     required this.phoneNumber,
     required this.amount,
@@ -23,7 +23,7 @@ class TransferMoneyToOtherAccountEvent extends TransactionsEvent {
 
 class WithdrawMoneyFromAccountEvent extends TransactionsEvent {
   final String phoneNumber;
-  final int amount;
+  final String amount;
   const WithdrawMoneyFromAccountEvent({
     required this.phoneNumber,
     required this.amount,

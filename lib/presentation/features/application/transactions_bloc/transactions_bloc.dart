@@ -24,8 +24,8 @@ class TransactionsBloc extends Bloc<TransactionsEvent, TransactionsState> {
   ) async {
     final transaction =
         await _transactionRepositoryImp.transferMoneyFromAccount(
-      phoneNumber: "phoneNumber",
-      amount: 302,
+      phoneNumber: event.phoneNumber,
+      amount: event.amount,
     );
 
     emit(state.copyWith(transactionsTransferModel: transaction));
@@ -37,8 +37,8 @@ class TransactionsBloc extends Bloc<TransactionsEvent, TransactionsState> {
   ) async {
     final transaction =
         await _transactionRepositoryImp.withDrawMoneyFromAccount(
-      phoneNumber: "phoneNumber",
-      amount: 302,
+      phoneNumber: event.phoneNumber,
+      amount: event.amount,
     );
 
     emit(state.copyWith(transactionsWithDrawModel: transaction));

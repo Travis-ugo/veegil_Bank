@@ -94,7 +94,7 @@ class TransferToAccountView extends StatelessWidget {
                       context.read<TransactionsBloc>().add(
                       TransferMoneyToOtherAccountEvent(
                         phoneNumber: accountNumberTextController.text,
-                        amount: int.parse(amountTextController.text),
+                        amount: amountTextController.text,
                       ),
                       );
                     }

@@ -8,7 +8,7 @@ import 'package:veegil_bank_app/presentation/features/application/analytics_bloc
 import 'package:veegil_bank_app/presentation/features/application/authentication_bloc/authentication_bloc.dart';
 import 'package:veegil_bank_app/presentation/features/application/dashboard_bloc/dashboard_bloc.dart';
 import 'package:veegil_bank_app/presentation/features/application/transactions_bloc/transactions_bloc.dart';
-import 'package:veegil_bank_app/presentation/features/infrastructure/authentication/authentication_repository_imp..dart';
+import 'package:veegil_bank_app/presentation/features/infrastructure/authentication/authentication_repository_imp.dart';
 import 'package:veegil_bank_app/presentation/features/infrastructure/data_from_database/data_from_database_repository_imp.dart';
 import 'package:veegil_bank_app/presentation/features/infrastructure/transactions/transaction_repository_imp.dart';
 import 'package:veegil_bank_app/presentation/features/presentation/authentication/sign_up/sign_up_page.dart';

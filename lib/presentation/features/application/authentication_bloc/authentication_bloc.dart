@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:veegil_bank_app/presentation/features/domain/authentication_repository/auth_failures.dart';
-import 'package:veegil_bank_app/presentation/features/infrastructure/authentication/authentication_repository_imp..dart';
+import 'package:veegil_bank_app/presentation/features/infrastructure/authentication/authentication_repository_imp.dart';
 
 part 'authentication_event.dart';
 part 'authentication_state.dart';
@@ -45,7 +45,7 @@ class AuthenticationBloc
   Future _submitAuthFormSignupEvent(SubmitAuthFormButtonSignupEvent event,
       Emitter<AuthenticationState> emit) async {
     try {
-      var authenticationSignUpModel =
+      final authenticationSignUpModel =
           await _authenticationRepositoryImp.signUpWithPhoneNumAndPassord(
         phoneNumber: state.phoneNubmber,
         password: state.password,
@@ -75,7 +75,7 @@ class AuthenticationBloc
     Emitter<AuthenticationState> emit,
   ) async {
     try {
-      var authenticationSignUpModel =
+      final authenticationSignUpModel =
           await _authenticationRepositoryImp.logInUpWithPhoneNumAndPassord(
         phoneNumber: state.phoneNubmber,
         password: state.password,

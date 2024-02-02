@@ -3,7 +3,7 @@ import 'package:veegil_bank_app/presentation/features/domain/transaction_domain/
 
 abstract class TransactionRepository {
   Future<TransactionsWithDrawModel> withDrawMoneyFromAccount(
-      {required String phoneNumber, required int amount});
+      {required String phoneNumber, required String amount});
   Future<TransactionsTransferModel> transferMoneyFromAccount(
-      {required String phoneNumber, required int amount});
+      {required String phoneNumber, required String amount});
 }
