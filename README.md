@@ -5,12 +5,10 @@ the smart Ix is a home automation assistance that lets you control a large famil
 the smart Ix mobile applications are built with flutter. 
 
 <div>
-  
-<img width="24%" alt="Screenshot 2024-02-16 at 03 12 23" src="https://github.com/Travis-ugo/veegil_Bank/assets/68594765/952b45eb-14f0-422e-867a-e1ed9af386f7">
-<img width="24%" alt="Screenshot 2024-02-16 at 03 12 13" src="https://github.com/Travis-ugo/veegil_Bank/assets/68594765/5adf8e04-c1dd-46c4-a777-f61598aea4fb">
-<img width="24%" alt="Screenshot 2024-02-16 at 03 12 09" src="https://github.com/Travis-ugo/veegil_Bank/assets/68594765/147dfe8e-3297-4dd2-b247-c5ff2eb4581e">
 <img width="24%" alt="Screenshot 2024-02-16 at 03 12 05" src="https://github.com/Travis-ugo/veegil_Bank/assets/68594765/86a6a859-4209-4fee-b724-cac31d66b117">
+<img width="24%" alt="Screenshot 2024-02-16 at 03 12 09" src="https://github.com/Travis-ugo/veegil_Bank/assets/68594765/147dfe8e-3297-4dd2-b247-c5ff2eb4581e">
 <img width="24%" alt="Screenshot 2024-02-16 at 03 12 30" src="https://github.com/Travis-ugo/veegil_Bank/assets/68594765/acd37828-85c4-4f26-8f16-8b778e29b7a9">
+<img width="24%" alt="Screenshot 2024-02-16 at 03 12 23" src="https://github.com/Travis-ugo/veegil_Bank/assets/68594765/952b45eb-14f0-422e-867a-e1ed9af386f7">
 
 </div>
 
